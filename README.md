@@ -66,7 +66,7 @@ Below is a breakdown of commercial, cloud-hosted flexible licensing, marketplace
 
 Self-hosted, transparent, and community-driven tools for software license management, hardware copy protection, SBOM compliance checking, and cloud service marketplaces. 
 
-Sorted descending by GitHub star count:
+Sorted descending by GitHub Stars_Count:
 
 - 🛠️ **[aboutcode-org/scancode-toolkit](https://github.com/aboutcode-org/scancode-toolkit)** [![Stars](https://img.shields.io/github/stars/aboutcode-org/scancode-toolkit?style=social&color=white)](https://github.com/aboutcode-org/scancode-toolkit/stargazers)  
   **Stack:** Python | **License:** Apache-2.0 / CC-BY-4.0  
@@ -153,7 +153,7 @@ Contributions are warmly welcomed! If you know of an open-source software licens
 
 1. 🍴 Fork this repository.
 2. 🌿 Create a new branch (`git checkout -b feature/add-tool`).
-3. 📝 Add the project with its name, GitHub repository link, star badge, technology stack, license, and a concise summary.
+3. 📝 Add the project with its name, GitHub repository link, Stars_Badge, technology stack, license, and a concise summary.
 4. 🔄 Ensure the repository is actively maintained (commits within the last 12 months) and open-source.
 5. 🚀 Commit your changes and submit a pull request.
 

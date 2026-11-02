@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0d1b2a" />
+      <stop offset="100%" stop-color="#14213d" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+      <circle cx="40" cy="40" r="1.5" fill="#64748b" fill-opacity="0.4" />
+    </pattern>
+
+    <style>
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        letter-spacing: -0.5px;
+        fill: url(#primaryGrad);
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        fill: #94a3b8;
+        letter-spacing: 0.3px;
+      }
+      .tag-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Dynamic Animated Flow Elements */
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1.5deg); }
+      }
+      @keyframes floatReverse {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(10px) rotate(-1.5deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.08); }
+      }
+      @keyframes dataStream {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes orbMove {
+        0%, 100% { transform: translate(0, 0); }
+        33% { transform: translate(30px, -20px); }
+        66% { transform: translate(-20px, 15px); }
+      }
+
+      .floating-card-1 {
+        animation: floatSlow 7s ease-in-out infinite;
+      }
+      .floating-card-2 {
+        animation: floatReverse 8.5s ease-in-out infinite;
+      }
+      .pulsing-glow {
+        animation: pulseGlow 5s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .moving-orb {
+        animation: orbMove 12s ease-in-out infinite;
+      }
+      .pulse-stream {
+        stroke-dasharray: 12, 12;
+        animation: dataStream 6s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" rx="16" fill="url(#techGrid)" />
+
+  <!-- Dynamic Ambient Glowing Orbs in Background -->
+  <g class="moving-orb" opacity="0.6">
+    <circle cx="180" cy="90" r="130" fill="url(#glowGrad)" class="pulsing-glow" filter="blur(40px)" />
+    <circle cx="1020" cy="240" r="160" fill="url(#glowGrad)" class="pulsing-glow" filter="blur(50px)" />
+  </g>
+
+  <!-- Background Data Flow Lines (Behind text layer) -->
+  <g stroke-linecap="round" opacity="0.45">
+    <path class="pulse-stream" d="M 50 70 Q 300 20 600 80 T 1150 50" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+    <path class="pulse-stream" d="M 80 300 Q 400 350 750 290 T 1140 310" fill="none" stroke="#818cf8" stroke-width="2" />
+    <path class="pulse-stream" d="M 100 180 C 350 250, 850 110, 1100 190" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-opacity="0.3" />
+  </g>
+
+  <!-- Dynamic Background Floating Cards / Metrics (Carefully placed at edges so title/subtitle stay in clear foreground) -->
+  <!-- Top Left Dynamic Card -->
+  <g class="floating-card-1" transform="translate(60, 42)">
+    <rect width="170" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="26" cy="26" r="10" fill="#38bdf8" fill-opacity="0.2" />
+    <path d="M 22 26 L 25 29 L 31 22" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+    <text x="46" y="24" fill="#f8fafc" class="tag-text">HYPERSCALERS</text>
+    <text x="46" y="39" fill="#38bdf8" font-size="11" font-family="sans-serif" font-weight="700">AWS • Azure • GCP</text>
+  </g>
+
+  <!-- Top Right Dynamic Card -->
+  <g class="floating-card-2" transform="translate(970, 42)">
+    <rect width="170" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="26" cy="26" r="10" fill="#818cf8" fill-opacity="0.2" />
+    <circle cx="26" cy="26" r="4" fill="#818cf8" />
+    <text x="46" y="24" fill="#f8fafc" class="tag-text">MARKETPLACES</text>
+    <text x="46" y="39" fill="#818cf8" font-size="11" font-family="sans-serif" font-weight="700">$45B+ 2026 GMV</text>
+  </g>
+
+  <!-- Bottom Left Dynamic Card -->
+  <g class="floating-card-2" transform="translate(60, 266)">
+    <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="26" cy="26" r="10" fill="#10b981" fill-opacity="0.2" />
+    <text x="26" y="30" font-family="sans-serif" font-size="12" font-weight="bold" fill="#10b981" text-anchor="middle">&lt;/&gt;</text>
+    <text x="48" y="24" fill="#f8fafc" class="tag-text">OPEN SOURCE</text>
+    <text x="48" y="39" fill="#10b981" font-size="11" font-family="sans-serif" font-weight="700">Self-Hosted Entitlements</text>
+  </g>
+
+  <!-- Bottom Right Dynamic Card -->
+  <g class="floating-card-1" transform="translate(960, 266)">
+    <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="26" cy="26" r="10" fill="#c084fc" fill-opacity="0.2" />
+    <path d="M 21 28 L 26 21 L 31 28 Z" fill="none" stroke="#c084fc" stroke-width="2" />
+    <text x="48" y="24" fill="#f8fafc" class="tag-text">PROCUREMENT AI</text>
+    <text x="48" y="39" fill="#c084fc" font-size="11" font-family="sans-serif" font-weight="700">Intake-to-Procure &amp; Spend</text>
+  </g>
+
+  <!-- FOREGROUND HERO HEADER & TEXT (Guaranteed top-layer z-index, zero obstruction) -->
+  <g id="hero-foreground">
+    <!-- Category Pill Badge -->
+    <g transform="translate(485, 62)">
+      <rect width="230" height="30" rx="15" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <circle cx="16" cy="15" r="4" fill="#38bdf8" />
+      <text x="30" y="20" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="1">CURATED AWESOME LIST</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="152" text-anchor="middle" class="title-text">Awesome Flexible SaaS Licensing</text>
+    <text x="600" y="198" text-anchor="middle" class="title-text" font-size="34" fill="#f1f5f9">&amp; Procurement</text>
+
+    <!-- Subtitle -->
+    <text x="600" y="240" text-anchor="middle" class="subtitle-text">
+      Cloud Marketplaces • License Entitlements • Spend Optimization • Open-Source Engines
+    </text>
+
+    <!-- Feature Pillars -->
+    <g transform="translate(370, 275)" opacity="0.95">
+      <!-- Item 1 -->
+      <circle cx="10" cy="10" r="3" fill="#38bdf8" />
+      <text x="22" y="14" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="600">Consumption Licensing</text>
+      
+      <!-- Divider -->
+      <circle cx="195" cy="10" r="2" fill="#64748b" />
+
+      <!-- Item 2 -->
+      <circle cx="215" cy="10" r="3" fill="#818cf8" />
+      <text x="227" y="14" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="600">Enterprise Intake</text>
+
+      <!-- Divider -->
+      <circle cx="365" cy="10" r="2" fill="#64748b" />
+
+      <!-- Item 3 -->
+      <circle cx="385" cy="10" r="3" fill="#34d399" />
+      <text x="397" y="14" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="600">License Verification</text>
+    </g>
+  </g>
+</svg>
